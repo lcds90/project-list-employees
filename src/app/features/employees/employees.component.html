@@ -1,0 +1,52 @@
+<table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <colgroup>
+    <col style="width:10%">
+    <col style="width:30%">
+    <col style="width:60%">
+  </colgroup>  
+  <caption>Quadro de funcionários</caption>
+  
+  <tbody>
+
+  <ng-container matColumnDef="photo">
+    <th class="th-black" mat-header-cell *matHeaderCellDef> </th>
+    <td class="column-img" mat-cell *matCellDef="let employee">
+      <div class="circle">
+      <img [src]="employee.photo" alt="" srcset="">
+      </div>
+    </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="name">
+    <th class="th-black" mat-header-cell *matHeaderCellDef> Funcionário </th>
+    <td class="column-info" mat-cell *matCellDef="let employee">
+      <span>{{employee.name}}</span>
+      <span>{{employee.email}}</span>
+      <span>{{employee.role}} | {{employee.departament}} </span>
+      
+      <span><span>Data de contratação </span>{{employee.startedAt | date: 'dd/MM/YYYY'}}</span>
+    </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="active">
+    <th class="th-black" mat-header-cell *matHeaderCellDef> Ações </th>
+    <td class="column-actions" mat-cell *matCellDef="let employee">
+      <div *ngIf="employee.active; else desligado">
+      <button mat-raised-button color="warn">Editar</button>
+      <button mat-raised-button color="accent">Desligar</button>
+      </div>
+      
+      <ng-template #desligado>
+        <div>
+        Funcionário desligado
+      </div>
+      </ng-template>
+       </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>
+

@@ -1,0 +1,111 @@
+table {
+  width:100%;
+  background-color: rgb(255, 240, 242);
+}
+
+table thead, table tbody {
+  border-radius: 25px;
+}
+
+caption {
+  background-color: white;
+  border: 5px solid rgb(180, 180, 180);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom: none;
+  color:rgb(70, 70, 70);
+  font-size:1.5rem;
+  padding:5px;
+  letter-spacing: 1.5px;
+}
+
+.th-black {
+  background-color: rgb(180, 180, 180);
+  color:rgb(70, 70, 70);
+}
+
+.circle {
+  width:70px;
+  height:70px;
+  border-radius: 50%;
+  position:relative;
+  border: .5px solid black;
+  background-color: gray;
+  filter: drop-shadow(.5px .5px 5px rgba(0,0,0,.5));
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle img {
+  width:100%;
+}
+
+.column-actions button {
+  width:40%;
+  margin:0% 5%;
+}
+
+.column-actions div {
+  width:100%;
+  text-align: center;
+}
+
+.column-info {
+  text-align: justify;
+  border-bottom: 2.5px lightgrey double;
+  border-right: 2.5px grey double;
+  border-bottom-right-radius:5px;
+  border-top-right-radius:5px;
+}
+
+.column-info span {
+  display:block;
+}
+
+.column-info > span:nth-child(1) {
+  margin-left:.5rem;
+  padding:2.5px 0;
+  font-size:1.1rem;
+  font-style: italic;
+  background-color: rgba(0,0,0,.05);
+  border-left:.5px rgba(0,0,0,.5) solid;
+  border-bottom:.5px rgba(0,0,0,.5) solid;
+  text-indent: 25px;
+}
+
+.column-info > span:nth-child(2) {
+ margin-left:1rem;
+ font-size:1.025rem;
+ border-left: .5px solid rgba(0,0,0,.5);
+ background-color: rgb(255, 189, 200);
+ text-align: center;
+ color: rgb(255, 255, 255);
+ text-shadow: 0 .5px 2px rgb(255, 0, 221);
+ font-weight: 500;
+}
+
+.column-info > span:nth-child(3) {
+  margin-left:1rem;
+  font-size:0.95rem;
+  border-left: .5px solid rgba(0,0,0,.5);
+ background-color: rgb(255, 189, 200);
+ text-align: center;
+ color: rgb(41, 41, 41);
+ font-weight: 300;
+}
+
+.column-info span:nth-child(4) > span {
+  display: inline;
+  color:grey;
+  letter-spacing: -.5px;
+  font-size:.75rem;
+}
+
+.column-info span:nth-child(4) {
+  display: inline;
+  color:rgb(255, 0, 221);
+  letter-spacing: .5px;
+}
+
