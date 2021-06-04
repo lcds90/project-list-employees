@@ -1,3 +1,18 @@
+div:nth-of-type(1){
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+#addNewEmployee {
+  border-radius: 15px;
+  background-color: green;
+  color: white;
+  width: 75%;
+}
+
 table {
   width:100%;
   background-color: rgb(255, 240, 242);

@@ -1,0 +1,14 @@
+#toolbar {
+  border-bottom: .5px solid black;
+  height: 100px;
+  padding: 15px;
+  display:grid;
+  gap: 20px;
+  grid: 1fr / repeat(3, 1fr);
+  justify-items: center;
+}
+
+button {
+  width:200px;
+}
+

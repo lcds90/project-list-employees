@@ -1,7 +1,9 @@
+import { SellsComponent } from './features/sells/sells.component';
+import { InfoComponent } from './features/info/info.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
-import { NewEmployeeComponent } from './features/new-employee/new-employee.component';
+import { FormEmployeeComponent } from './features/form-employee/form-employee.component';
 
 const routes: Routes = [
   {
@@ -9,8 +11,16 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "new",
-    component: NewEmployeeComponent
+    path: "form",
+    component: FormEmployeeComponent
+  },
+  {
+    path: "info",
+    component: InfoComponent
+  },
+  {
+    path: "sells",
+    component: SellsComponent
   }
 ];
 

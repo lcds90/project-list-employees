@@ -1,10 +1,10 @@
 export interface Employee {
-    id: number;
+    // id: number;
     name: string;
     email: string;
     photo?: string;
-    role: string;
+    supervisor: string;
     departament: string;
     active: boolean;
-    startedAt: Date;
+    startedAt: string;
 }

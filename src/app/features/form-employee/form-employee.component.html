@@ -1,0 +1,44 @@
+<main>
+  <app-toolbar></app-toolbar>
+  <div class="container">
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="employee.name" name="name" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input [(ngModel)]="employee.email" name="email" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Foto</mat-label>
+        <input [(ngModel)]="employee.photo" name="photo" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Cargo</mat-label>
+        <input [(ngModel)]="employee.supervisor" name="supervisor" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Departamento</mat-label>
+        <input [(ngModel)]="employee.departament" name="departament" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Funcionário ativo</mat-label>
+        <mat-select [(ngModel)]="employee.active" name="active">
+          <mat-option value="true">Sim</mat-option>
+          <mat-option value="false">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Quando começou</mat-label>
+        <input [(ngModel)]="employee.startedAt" name="startedAt" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-fab title="Adicionar funcionário">
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
+
+  </div>
+</main>

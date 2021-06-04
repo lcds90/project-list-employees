@@ -1,11 +1,18 @@
-<table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div>
+  <button id="addNewEmployee" mat-raised-button [routerLink]="['/form']" routerLinkActive="router-link-active">
+    <mat-icon>add</mat-icon> Novo funcionário
+  </button>
+</div>
+<table
+id="tableEmployees"
+style="width: 100%;" mat-table [dataSource]="employees | async" class="mat-elevation-z8">
   <colgroup>
     <col style="width:10%">
     <col style="width:30%">
     <col style="width:60%">
-  </colgroup>  
-  <caption>Quadro de funcionários</caption>
-  
+  </colgroup>
+  <caption id="tableEmployees__caption">Quadro de funcionários</caption>
+
   <tbody>
 
   <ng-container matColumnDef="photo">
@@ -16,14 +23,14 @@
       </div>
     </td>
   </ng-container>
-  
+
   <ng-container matColumnDef="name">
     <th class="th-black" mat-header-cell *matHeaderCellDef> Funcionário </th>
     <td class="column-info" mat-cell *matCellDef="let employee">
       <span>{{employee.name}}</span>
       <span>{{employee.email}}</span>
       <span>{{employee.role}} | {{employee.departament}} </span>
-      
+
       <span><span>Data de contratação </span>{{employee.startedAt | date: 'dd/MM/YYYY'}}</span>
     </td>
   </ng-container>
@@ -34,13 +41,14 @@
     <th class="th-black" mat-header-cell *matHeaderCellDef> Ações </th>
     <td class="column-actions" mat-cell *matCellDef="let employee">
       <div *ngIf="employee.active; else desligado">
-      <button mat-raised-button color="warn">Editar</button>
-      <button mat-raised-button color="accent">Desligar</button>
+      <button mat-raised-button color="warn" (click)="edit(employee, employee.key)">Editar</button>
+      <button mat-raised-button color="accent" (click)="dismiss(employee, employee.key)">Desligar</button>
       </div>
-      
+
       <ng-template #desligado>
         <div>
         Funcionário desligado
+      <button mat-raised-button color="accent" (click)="delete(employee.key)">Deletar</button>
       </div>
       </ng-template>
        </td>
